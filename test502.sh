@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/jopa/
+sudo rm -rf /tmp/jopa/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/number-too/jopa.git /tmp/jopa
 cd /tmp/jopa
 chmod +x /tmp/jopa/jopa
 chmod 777 ./*.sh
-cp /tmp/jopa/jopa /usr/bin/
+sudo cp /tmp/jopa/jopa /usr/bin/
 sleep 3
 
 
